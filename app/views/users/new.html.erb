@@ -1,0 +1,15 @@
+<h1>Make a New User:</h1>
+
+<%= form_with model: @user, local: true do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.submit "Create User" %>
+<% end %>
+
+<% if flash[:error] %>
+    <% flash[:error].each do |msg| %>
+        <li style="color: red"><%= msg %></li>
+    <% end%>
+<% end%>
