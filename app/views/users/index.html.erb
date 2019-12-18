@@ -2,4 +2,9 @@
 
 <% @users.each do |user| %>
     <p><strong><%= user.username %></strong> -  <%= user.email %></p>
+    <h4>Children:</h4>
+    <% user.children.each do |c| %>
+        <p>     <strong><%= c.name %></strong> -  <%= c.nickname %></p>
+    <% end%>
+    <hr>
 <% end %>

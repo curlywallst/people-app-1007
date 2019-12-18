@@ -5,6 +5,11 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
+        @user.children.build
+        @user.children.build
+        @user.children.build
+        @user.children.build
+        @user.children.build
     end
 
     def create
@@ -20,6 +25,13 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :email)
+        params.require(:user).permit(
+            :username, 
+            :email,
+            children_attributes: [
+                :name,
+                :nickname
+            ]
+            )
     end
 end

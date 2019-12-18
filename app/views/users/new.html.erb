@@ -5,6 +5,16 @@
     <%= f.text_field :username %>
     <%= f.label :email %>
     <%= f.text_field :email %>
+    <div>
+        <h1>Create Child:</h1>
+        <%= f.fields_for :children do |children_form| %>
+        <%= children_form.label :name %>
+        <%= children_form.text_field :name %> 
+        <%= children_form.label :nickname %>
+        <%= children_form.text_field :nickname %> 
+        <br>   
+        <% end %>
+    </div>
     <%= f.submit "Create User" %>
 <% end %>
 
